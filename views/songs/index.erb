@@ -1,0 +1,18 @@
+<h1 class="text-center">Songs</h1>
+
+<% @songs.each do |song| %>
+  <div class="row">
+    <div class="small-1 columns"></div>
+
+    <div class="small-10 small-offset-1 columns">
+      <div class="callout success">
+        <h4><%= song.title %> - by <%= song.artist %></h4>
+        <h5>Album: <%= song.album %></h5>
+        <h5><%= song.year %></h5>
+        <a href="<%= song.url %>">Listen...</a>
+      </div>
+    </div>
+
+    <div class="small-1 columns"></div>
+  </div>
+<% end %>

@@ -19,27 +19,27 @@
       <label for="title">
         Title
       </label>
-      <input class="input-group-field" id="title" type="text" />
+      <input class="input-group-field" id="title" name="title" type="text" />
 
       <label for="artist">
         Artist
       </label>
-      <input class="input-group-field" id="artist" type="text" />
+      <input class="input-group-field" id="artist" name="artist" type="text" />
 
       <label for="album">
         Album
       </label>
-      <input class="input-group-field" id="album" type="text" />
+      <input class="input-group-field" id="album" name="album" type="text" />
 
       <label for="year">
         Year
       </label>
-      <input class="input-group-field" id="year" type="text" />
+      <input class="input-group-field" id="year" name="year" type="text" />
 
       <label for="url">
         URL
       </label>
-      <input class="input-group-field" id="url" type="text" />
+      <input class="input-group-field" id="url" name="url" type="text" />
 
       <button type="submit" class="button expanded">Submit</button>
     </form>

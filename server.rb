@@ -1,4 +1,5 @@
 require "sinatra"
+require "pry"
 
 require_relative "models/song"
 
@@ -12,11 +13,13 @@ end
 
 # create
 get "/songs/new" do
-  "TODO"
+  erb :"songs/new"
 end
 
 post "/songs" do
-  "TODO"
+  song = Song.new(params)
+  song.save
+  redirect to("/songs")
 end
 
 # read

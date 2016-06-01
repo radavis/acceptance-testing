@@ -10,8 +10,6 @@ class Song
       result
     end
 
-    private
-
     def csv_file
       if ENV["RACK_ENV"] == "test"
         return File.join(File.dirname(__FILE__), "..", "data", "songs_test.csv")
@@ -26,6 +24,12 @@ class Song
         headers: true
       }
     end
+
+    def reset_csv
+      CSV.open(Song.csv_file, "wb", Song.csv_options) do |csv|
+        csv << ["title", "artist", "album", "year", "url"]
+      end
+    end
   end
 
   attr_reader :title, :artist, :album, :year, :url
@@ -36,5 +40,11 @@ class Song
     @album = attributes["album"]
     @year = attributes["year"]
     @url = attributes["url"]
+  end
+
+  def save
+    CSV.open(Song.csv_file, "ab", Song.csv_options) do |csv|
+      csv << [title, artist, album, year, url]
+    end
   end
 end

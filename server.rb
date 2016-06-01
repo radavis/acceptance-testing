@@ -2,13 +2,19 @@ require "sinatra"
 
 require_relative "models/song"
 
+set :bind, "0.0.0.0"
 set :views, File.join(File.dirname(__FILE__), "views")
 
+# root path
 get "/" do
   redirect to("/songs")
 end
 
 # create
+get "/songs/new" do
+  "TODO"
+end
+
 post "/songs" do
   "TODO"
 end
@@ -24,6 +30,10 @@ get "/songs/:id" do
 end
 
 # update
+get "/songs/:id/edit" do
+  "TODO"
+end
+
 patch "/songs/:id" do
   "TODO"
 end
